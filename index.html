@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>DSFinal</title>
+<title>DSFinal-2</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13077,19 +13077,9 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Analysis of Opioid Drug Overdoses and Prescriptions in the U.S. from 2015 - 2020</strong></p>
-<p>Thomas Cutro</p>
+<h1 id="Analysis-of-Opioid-Drug-Overdoses-and-Prescriptions-in-the-U.S.-from-2015---2020"><strong>Analysis of Opioid Drug Overdoses and Prescriptions in the U.S. from 2015 - 2020</strong><a class="anchor-link" href="#Analysis-of-Opioid-Drug-Overdoses-and-Prescriptions-in-the-U.S.-from-2015---2020">&#182;</a></h1><p>Thomas Cutro</p>
 <p>Joeseph Wagner</p>
 <p><a href="https://tcutro1.github.io/final-project/">Website</a></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://data.cms.gov/summary-statistics-on-use-and-payments/medicare-medicaid-opioid-prescribing-rates/medicaid-opioid-prescribing-rates-by-geography/data">https://data.cms.gov/summary-statistics-on-use-and-payments/medicare-medicaid-opioid-prescribing-rates/medicaid-opioid-prescribing-rates-by-geography/data</a></p>
-<p><a href="https://www.cdc.gov/nchs/nvss/vsrr/drug-overdose-data.htm">https://www.cdc.gov/nchs/nvss/vsrr/drug-overdose-data.htm</a></p>
 
 </div>
 </div>
@@ -13104,18 +13094,58 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We are currently working with two datasets to analyze possible links between drug overdoses and drug prescriptions within the U.S. from 2015-2020. Our first dataset is The Provisional Drug Overdose Death Counts from the Center for Disease Control (CDC).</p>
+<p>We are currently working with two datasets to analyze possible links between drug overdoses and drug prescriptions within the U.S. from 2015-2020. Our first dataset is <a href="https://www.cdc.gov/nchs/nvss/vsrr/drug-overdose-data.htm">The Provisional Drug Overdose Death Counts</a> from the Center for Disease Control (CDC). It contains the specific types of overdoses in every state for the U.S., with specific months as well. We plan on comparing this dataset to the <a href="https://data.cms.gov/summary-statistics-on-use-and-payments/medicare-medicaid-opioid-prescribing-rates/medicaid-opioid-prescribing-rates-by-geography/data">Medicare Prescribing Rates</a> Dataset. This dataset contains information sorted by state that describes a multitude of fatures for how states have prescribed opioids for the years we are interested in. We want to investigate if there is a correlation between the number of drug overdoses and the rate at which these drugs are prescribed. The data will help answer this question as it is sorted regionally, so we can study trends in  specific places. Some data that could help further investigate this topic would be drug prices over the years, as it could help explain trends in our own data.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Collaboration-Plan">Collaboration Plan<a class="anchor-link" href="#Collaboration-Plan">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We have a shared google drive folder, where we are keeping the relevant datasets and our website's files. We will meet once a week or more as needed. We both live near each other, so collaboration we expect to be easy. For the next milestone, we plan on developing our visualizations past what we currently have. Also, we will focus on finding statistics that are unaffected by the differing state populations.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="ETL">ETL<a class="anchor-link" href="#ETL">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We first load in the data for drug overdose deaths from the CDC website. The data is displayed in the table below. It contains the number of deaths for a class of drugs for each state and year/month combination. The year and month columns will prove especially helpful, as we can examine the date in a much more detailed manner than if we just had the year. This will help to answer our question of whether there is a causation/correlation between drug related deaths and prescriptions, as we can easily visualize trends over time in a detailed manner. We filtered the orginal dataset to remove extraneous columns and keep our data tidy. Additionally, we removed NaN values from the table.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://www.cdc.gov/nchs/nvss/vsrr/drug-overdose-data.htm">https://www.cdc.gov/nchs/nvss/vsrr/drug-overdose-data.htm</a></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[159]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
+<span class="c1">#Reads in datafile containg data on different drug deaths for every state 2015-2022</span>
 <span class="n">drug_deaths</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://data.cdc.gov/api/views/xkb8-kh2a/rows.csv?accessType=DOWNLOAD&amp;bom=true&amp;format=true&quot;</span><span class="p">)</span>
+<span class="c1">#Gets rid of commas in data values column and converts object column to float</span>
 <span class="n">drug_deaths</span><span class="p">[</span><span class="s2">&quot;Data Value&quot;</span><span class="p">]</span><span class="o">=</span> <span class="n">drug_deaths</span><span class="p">[</span><span class="s2">&quot;Data Value&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
 </pre></div>
 
@@ -13126,10 +13156,11 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[160]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="n">drug_deaths</span><span class="o">=</span> <span class="n">drug_deaths</span><span class="p">[[</span><span class="s2">&quot;State Name&quot;</span><span class="p">,</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span><span class="s2">&quot;Month&quot;</span><span class="p">,</span><span class="s2">&quot;Indicator&quot;</span><span class="p">,</span><span class="s2">&quot;Data Value&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">drug_deaths</span><span class="p">[</span><span class="s2">&quot;Data Value&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">==</span><span class="kc">False</span><span class="p">]</span>
+<div class=" highlight hl-python"><pre><span></span><span class="c1">#Filters dataframe for only select columns we want and renames Data Values column to Deaths</span>
+<span class="n">drug_deaths</span><span class="o">=</span> <span class="n">drug_deaths</span><span class="p">[[</span><span class="s2">&quot;State Name&quot;</span><span class="p">,</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span><span class="s2">&quot;Month&quot;</span><span class="p">,</span><span class="s2">&quot;Indicator&quot;</span><span class="p">,</span><span class="s2">&quot;Data Value&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">drug_deaths</span><span class="p">[</span><span class="s2">&quot;Data Value&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">==</span><span class="kc">False</span><span class="p">]</span>
 <span class="n">drug_deaths</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">drug_deaths</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;Data Value&#39;</span><span class="p">,</span> <span class="s1">&#39;Deaths&#39;</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">drug_deaths</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">drug_deaths</span><span class="o">.</span><span class="n">dtypes</span><span class="p">)</span>
@@ -13151,7 +13182,7 @@ div#notebook {
 
 <div class="output_html rendered_html output_subarea ">
 
-  <div id="df-2770ec7a-bec3-4a01-bd21-e01241666a02">
+  <div id="df-56bed4b1-549d-4589-8d1c-855b1f7726b3">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -13271,7 +13302,7 @@ div#notebook {
 </table>
 <p>42549 rows × 5 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-2770ec7a-bec3-4a01-bd21-e01241666a02')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-56bed4b1-549d-4589-8d1c-855b1f7726b3')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -13322,12 +13353,12 @@ div#notebook {
 
       <script>
         const buttonEl =
-          document.querySelector('#df-2770ec7a-bec3-4a01-bd21-e01241666a02 button.colab-df-convert');
+          document.querySelector('#df-56bed4b1-549d-4589-8d1c-855b1f7726b3 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-2770ec7a-bec3-4a01-bd21-e01241666a02');
+          const element = document.querySelector('#df-56bed4b1-549d-4589-8d1c-855b1f7726b3');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -13373,12 +13404,53 @@ dtype: object</pre>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Below we filter the table further to obtain the total number of drug overdose deaths and the number of drug overdose deaths caused by opioids.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[100]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="n">opiod_presc</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;PrescriptionRates.csv&quot;</span><span class="p">)</span>
+<div class=" highlight hl-python"><pre><span></span><span class="c1">#Filters drug deaths dataframe to only contain values for total drug overdose deaths</span>
+<span class="n">drug_deaths_total</span> <span class="o">=</span> <span class="n">drug_deaths</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">drug_deaths</span><span class="p">[</span><span class="s2">&quot;Indicator&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;Number of Drug Overdose Deaths&quot;</span><span class="p">]</span>
+<span class="c1">#Filters drug deaths dataframe to only contain values for opioid drug overdose deaths</span>
+<span class="n">drug_deaths_opiods</span> <span class="o">=</span> <span class="n">drug_deaths</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">drug_deaths</span><span class="p">[</span><span class="s2">&quot;Indicator&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;Natural, semi-synthetic, &amp; synthetic opioids, incl. methadone (T40.2-T40.4)&quot;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Next, we read in the Medicare Opioid Prescribing Rates for the years 2013-2020. This dataset contains the opioid prescription rates and total number of opioids dispensed for a state in a year. The data is collected by the Centers for Medicare &amp; Medicaid Services, and it is based on claims data for Medicare beneficiaries. Unlike the previous drug overdose dataset, we do not receive a months column because this data is updated annually, so it will be a bit more difficult to visualize this data trend over small time intervals. We initially filter the table to only contain relevant data columns, which from this dataset was the Opioid Prescribing Rate and the Total Number of Opioid Claims.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://data.cms.gov/summary-statistics-on-use-and-payments/medicare-medicaid-opioid-prescribing-rates/medicaid-opioid-prescribing-rates-by-geography/data">https://data.cms.gov/summary-statistics-on-use-and-payments/medicare-medicaid-opioid-prescribing-rates/medicaid-opioid-prescribing-rates-by-geography/data</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="c1">#Reads in datafile containg opioid prescription data</span>
+<span class="n">opiod_presc</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;PrescriptionRates.csv&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13388,10 +13460,11 @@ dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[127]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="n">opiod_presc</span> <span class="o">=</span> <span class="n">opiod_presc</span><span class="p">[[</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span><span class="s2">&quot;Geo_Desc&quot;</span><span class="p">,</span><span class="s2">&quot;Tot_Opioid_Clms&quot;</span><span class="p">,</span><span class="s2">&quot;Opioid_Prscrbng_Rate&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">opiod_presc</span><span class="p">[</span><span class="s2">&quot;Opioid_Prscrbng_Rate&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">==</span><span class="kc">False</span><span class="p">]</span>
+<div class=" highlight hl-python"><pre><span></span><span class="c1">#Filters dataframe for only select columns we want and renames Geo_Desc column to State Name</span>
+<span class="n">opiod_presc</span> <span class="o">=</span> <span class="n">opiod_presc</span><span class="p">[[</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span><span class="s2">&quot;Geo_Desc&quot;</span><span class="p">,</span><span class="s2">&quot;Tot_Opioid_Clms&quot;</span><span class="p">,</span><span class="s2">&quot;Opioid_Prscrbng_Rate&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">opiod_presc</span><span class="p">[</span><span class="s2">&quot;Opioid_Prscrbng_Rate&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">==</span><span class="kc">False</span><span class="p">]</span>
 <span class="n">opiod_presc</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">opiod_presc</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;Geo_Desc&#39;</span><span class="p">,</span> <span class="s1">&#39;State Name&#39;</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">opiod_presc</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">opiod_presc</span><span class="o">.</span><span class="n">dtypes</span><span class="p">)</span>
@@ -13413,7 +13486,7 @@ dtype: object</pre>
 
 <div class="output_html rendered_html output_subarea ">
 
-  <div id="df-4481a859-0f2e-4ca7-8b74-d206f706692b">
+  <div id="df-afc976f0-c8dd-4026-8eb1-4bf642a63cd1">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -13521,7 +13594,7 @@ dtype: object</pre>
 </table>
 <p>1121 rows × 4 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-4481a859-0f2e-4ca7-8b74-d206f706692b')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-afc976f0-c8dd-4026-8eb1-4bf642a63cd1')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -13572,12 +13645,12 @@ dtype: object</pre>
 
       <script>
         const buttonEl =
-          document.querySelector('#df-4481a859-0f2e-4ca7-8b74-d206f706692b button.colab-df-convert');
+          document.querySelector('#df-afc976f0-c8dd-4026-8eb1-4bf642a63cd1 button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-4481a859-0f2e-4ca7-8b74-d206f706692b');
+          const element = document.querySelector('#df-afc976f0-c8dd-4026-8eb1-4bf642a63cd1');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -13624,24 +13697,11 @@ dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[161]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="n">drug_deaths_total</span> <span class="o">=</span> <span class="n">drug_deaths</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">drug_deaths</span><span class="p">[</span><span class="s2">&quot;Indicator&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;Number of Drug Overdose Deaths&quot;</span><span class="p">]</span>
-<span class="n">drug_deaths_opiods</span> <span class="o">=</span> <span class="n">drug_deaths</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">drug_deaths</span><span class="p">[</span><span class="s2">&quot;Indicator&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;Natural, semi-synthetic, &amp; synthetic opioids, incl. methadone (T40.2-T40.4)&quot;</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[162]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="n">deaths_by_year</span> <span class="o">=</span> <span class="n">drug_deaths_opiods</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;State Name&quot;</span><span class="p">,</span><span class="s2">&quot;Year&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<div class=" highlight hl-python"><pre><span></span><span class="c1">#Summarizes and groups both dataframes by State Name and year </span>
+<span class="n">deaths_by_year</span> <span class="o">=</span> <span class="n">drug_deaths_opiods</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;State Name&quot;</span><span class="p">,</span><span class="s2">&quot;Year&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="n">prescr_by_year</span> <span class="o">=</span> <span class="n">opiod_presc</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;State Name&quot;</span><span class="p">,</span><span class="s2">&quot;Year&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="n">prescr_and_deaths</span> <span class="o">=</span> <span class="n">deaths_by_year</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">prescr_by_year</span><span class="p">,</span> <span class="n">on</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;State Name&quot;</span><span class="p">,</span><span class="s2">&quot;Year&quot;</span><span class="p">],</span><span class="n">how</span> <span class="o">=</span> <span class="s2">&quot;inner&quot;</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">prescr_and_deaths</span><span class="p">)</span>
@@ -13657,13 +13717,13 @@ dtype: object</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[162]:</div>
+    <div class="prompt"></div>
 
 
 
-<div class="output_html rendered_html output_subarea output_execute_result">
+<div class="output_html rendered_html output_subarea ">
 
-  <div id="df-232f327c-8f6e-47f2-8af5-0c0193e46d85">
+  <div id="df-c67c0ee6-1f95-4e9d-8743-812c362b1ebe">
     <div class="colab-df-container">
       <div>
 <style scoped>
@@ -13771,7 +13831,7 @@ dtype: object</pre>
 </table>
 <p>209 rows × 3 columns</p>
 </div>
-      <button class="colab-df-convert" onclick="convertToInteractive('df-232f327c-8f6e-47f2-8af5-0c0193e46d85')"
+      <button class="colab-df-convert" onclick="convertToInteractive('df-c67c0ee6-1f95-4e9d-8743-812c362b1ebe')"
               title="Convert this dataframe to an interactive table."
               style="display:none;">
         
@@ -13822,12 +13882,12 @@ dtype: object</pre>
 
       <script>
         const buttonEl =
-          document.querySelector('#df-232f327c-8f6e-47f2-8af5-0c0193e46d85 button.colab-df-convert');
+          document.querySelector('#df-c67c0ee6-1f95-4e9d-8743-812c362b1ebe button.colab-df-convert');
         buttonEl.style.display =
           google.colab.kernel.accessAllowed ? 'block' : 'none';
 
         async function convertToInteractive(key) {
-          const element = document.querySelector('#df-232f327c-8f6e-47f2-8af5-0c0193e46d85');
+          const element = document.querySelector('#df-c67c0ee6-1f95-4e9d-8743-812c362b1ebe');
           const dataTable =
             await google.colab.kernel.invokeFunction('convertToInteractive',
                                                      [key], {});
@@ -13855,16 +13915,35 @@ dtype: object</pre>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="EDA">EDA<a class="anchor-link" href="#EDA">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Below is a scatterplot of the Total Drug Overdose Deaths vs Total Opioid Claims. We plotted this data to see if there was any correlation present between the two variables. We need to do more analysis to see the reasons behind this correlation, and further steps that will be taken with the data are described in the next few cells.</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[166]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-python"><pre><span></span><span class="n">avg_state_deaths</span> <span class="o">=</span> <span class="n">drug_deaths_opiods</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;State Name&quot;</span><span class="p">])[[</span><span class="s2">&quot;Deaths&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="n">avg_state_presc</span> <span class="o">=</span> <span class="n">opiod_presc</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;State Name&quot;</span><span class="p">])[[</span><span class="s1">&#39;Tot_Opioid_Clms&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<div class=" highlight hl-python"><pre><span></span><span class="c1">#Group data by State and combine datasets to get Average Deaths and Average Opiod Prescriptions in one dataframe</span>
+<span class="n">avg_state_deaths</span> <span class="o">=</span> <span class="n">drug_deaths_opiods</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;State Name&quot;</span><span class="p">])[[</span><span class="s2">&quot;Deaths&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">avg_state_presc</span> <span class="o">=</span> <span class="n">opiod_presc</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;State Name&quot;</span><span class="p">])[[</span><span class="s1">&#39;Tot_Opioid_Clms&#39;</span><span class="p">,</span><span class="s1">&#39;Opioid_Prscrbng_Rate&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
 <span class="n">avg_state</span> <span class="o">=</span> <span class="n">avg_state_deaths</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">avg_state_presc</span><span class="p">,</span> <span class="n">on</span> <span class="o">=</span> <span class="s2">&quot;State Name&quot;</span><span class="p">,</span> <span class="n">how</span> <span class="o">=</span> <span class="s2">&quot;inner&quot;</span> <span class="p">)</span>
+<span class="c1">#Scatter Plot comparing Average Deaths and Average Opiod Prescriptions for each state</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">py</span>
-<span class="n">py</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">avg_state</span><span class="p">[</span><span class="s1">&#39;Tot_Opioid_Clms&#39;</span><span class="p">],</span><span class="n">avg_state</span><span class="p">[</span><span class="s2">&quot;Deaths&quot;</span><span class="p">])</span>
+<span class="n">py</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">py</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">avg_state</span><span class="p">[</span><span class="s1">&#39;Tot_Opioid_Clms&#39;</span><span class="p">]</span><span class="o">**.</span><span class="mi">2</span><span class="p">,</span><span class="n">avg_state</span><span class="p">[</span><span class="s2">&quot;Deaths&quot;</span><span class="p">])</span>
+<span class="n">py</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Total Drug Overdose Deaths vs Total Opioid Claims in the U.S.&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13877,13 +13956,13 @@ dtype: object</pre>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[166]:</div>
+    <div class="prompt output_prompt">Out[&nbsp;]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.collections.PathCollection at 0x7f2fd9f84750&gt;</pre>
+<pre>Text(0.5, 1.0, &#39;Total Drug Overdose Deaths vs Total Opioid Claims in the U.S.&#39;)</pre>
 </div>
 
 </div>
@@ -13896,9 +13975,560 @@ dtype: object</pre>
 
 
 <div class="output_png output_subarea ">
-<img src="data:image/png;base64,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
+<img src="data:image/png;base64,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
 "
 >
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The first two entries shown below, Florida and California, represent the states with the most drug overdose deaths and the most total opioid claims respectively. This proves interesting once you look at the state with the least overdose deaths, South Dakota, and the state with the least total opioid claims, Wyoming. While the opioid prescription rates between the different states are similar, the total number of deaths and total opioid claims differs by thousands between the entries. Our first step after this milestone will be to normalize this data by population, so that we can accurately compare the data of differing states. This will require data on state populations across these years.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-python"><pre><span></span><span class="c1">#state with highest amount of opiod overdoses</span>
+<span class="n">display</span><span class="p">(</span><span class="n">avg_state</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">avg_state</span><span class="p">[</span><span class="s2">&quot;Deaths&quot;</span><span class="p">]</span><span class="o">==</span> <span class="n">avg_state</span><span class="p">[</span><span class="s2">&quot;Deaths&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()])</span>
+<span class="c1">#state with highest amount of opiod prescriptions</span>
+<span class="n">display</span><span class="p">(</span><span class="n">avg_state</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">avg_state</span><span class="p">[</span><span class="s2">&quot;Tot_Opioid_Clms&quot;</span><span class="p">]</span><span class="o">==</span> <span class="n">avg_state</span><span class="p">[</span><span class="s2">&quot;Tot_Opioid_Clms&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()])</span>
+<span class="c1">#state with lowest amount of opiod overdoses</span>
+<span class="n">display</span><span class="p">(</span><span class="n">avg_state</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">avg_state</span><span class="p">[</span><span class="s2">&quot;Deaths&quot;</span><span class="p">]</span><span class="o">==</span> <span class="n">avg_state</span><span class="p">[</span><span class="s2">&quot;Deaths&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()])</span>
+<span class="c1">#state with lowest amount of opiod prescriptions</span>
+<span class="n">display</span><span class="p">(</span><span class="n">avg_state</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">avg_state</span><span class="p">[</span><span class="s2">&quot;Tot_Opioid_Clms&quot;</span><span class="p">]</span><span class="o">==</span> <span class="n">avg_state</span><span class="p">[</span><span class="s2">&quot;Tot_Opioid_Clms&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()])</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+
+  <div id="df-4cfa3c78-e9c4-4935-8a3b-bd5350553e54">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Deaths</th>
+      <th>Tot_Opioid_Clms</th>
+      <th>Opioid_Prscrbng_Rate</th>
+    </tr>
+    <tr>
+      <th>State Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Florida</th>
+      <td>5307.733333</td>
+      <td>769563.166667</td>
+      <td>3.737083</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-4cfa3c78-e9c4-4935-8a3b-bd5350553e54')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-4cfa3c78-e9c4-4935-8a3b-bd5350553e54 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-4cfa3c78-e9c4-4935-8a3b-bd5350553e54');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+
+  <div id="df-c09ec405-7278-4889-8a3c-1fa6d24543c5">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Deaths</th>
+      <th>Tot_Opioid_Clms</th>
+      <th>Opioid_Prscrbng_Rate</th>
+    </tr>
+    <tr>
+      <th>State Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>California</th>
+      <td>4710.714286</td>
+      <td>2.356281e+06</td>
+      <td>4.64125</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-c09ec405-7278-4889-8a3c-1fa6d24543c5')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-c09ec405-7278-4889-8a3c-1fa6d24543c5 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-c09ec405-7278-4889-8a3c-1fa6d24543c5');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+
+  <div id="df-db36b7ce-c815-4f07-9340-7b999f1eda7f">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Deaths</th>
+      <th>Tot_Opioid_Clms</th>
+      <th>Opioid_Prscrbng_Rate</th>
+    </tr>
+    <tr>
+      <th>State Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>South Dakota</th>
+      <td>32.108108</td>
+      <td>41600.125</td>
+      <td>4.98625</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-db36b7ce-c815-4f07-9340-7b999f1eda7f')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-db36b7ce-c815-4f07-9340-7b999f1eda7f button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-db36b7ce-c815-4f07-9340-7b999f1eda7f');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+<div class="output_html rendered_html output_subarea ">
+
+  <div id="df-f8880e54-3ce6-47ee-93f6-099e2a6cd6f0">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Deaths</th>
+      <th>Tot_Opioid_Clms</th>
+      <th>Opioid_Prscrbng_Rate</th>
+    </tr>
+    <tr>
+      <th>State Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Wyoming</th>
+      <td>44.064516</td>
+      <td>30742.375</td>
+      <td>6.105</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-f8880e54-3ce6-47ee-93f6-099e2a6cd6f0')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-f8880e54-3ce6-47ee-93f6-099e2a6cd6f0 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-f8880e54-3ce6-47ee-93f6-099e2a6cd6f0');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  
 </div>
 
 </div>
