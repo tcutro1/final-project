@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>DSFinal</title>
+<title>DSFinal-5</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13761,7 +13761,7 @@ dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[158]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="n">income</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/tcutro1/final-project/main/Income%20Data.csv&quot;</span><span class="p">)</span>
@@ -13784,7 +13784,7 @@ dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[159]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="n">income</span> <span class="o">=</span> <span class="n">income</span><span class="p">[[</span><span class="s2">&quot;State&quot;</span><span class="p">,</span><span class="s2">&quot;2015&quot;</span><span class="p">,</span><span class="s2">&quot;2016&quot;</span><span class="p">,</span><span class="s2">&quot;2017&quot;</span><span class="p">,</span><span class="s2">&quot;2018&quot;</span><span class="p">,</span><span class="s2">&quot;2019&quot;</span><span class="p">]]</span>
@@ -13807,13 +13807,13 @@ dtype: object</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[160]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-python"><pre><span></span><span class="n">income</span><span class="p">[</span><span class="s2">&quot;Year&quot;</span><span class="p">]</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_numeric</span><span class="p">(</span><span class="n">income</span><span class="p">[</span><span class="s2">&quot;Year&quot;</span><span class="p">])</span>
 <span class="n">income</span><span class="p">[</span><span class="s2">&quot;Income&quot;</span><span class="p">]</span><span class="o">=</span> <span class="n">income</span><span class="p">[</span><span class="s2">&quot;Income&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
 <span class="n">income</span><span class="p">[</span><span class="s2">&quot;Income&quot;</span><span class="p">]</span><span class="o">=</span> <span class="n">income</span><span class="p">[</span><span class="s2">&quot;Income&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;$&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
-<span class="c1">#income[&quot;State Name&quot;] = income[&quot;State Name&quot;].apply(lambda x: x.strip())</span>
+<span class="n">income</span><span class="p">[</span><span class="s2">&quot;State Name&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">income</span><span class="p">[</span><span class="s2">&quot;State Name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
 <span class="n">display</span><span class="p">(</span><span class="n">income</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">income</span><span class="o">.</span><span class="n">dtypes</span><span class="p">)</span>
 </pre></div>
@@ -13831,47 +13831,199 @@ dtype: object</pre>
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-144-e9ac16dec554&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> income<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#34;Year&#34;</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">=</span> pd<span class="ansi-blue-fg">.</span>to_numeric<span class="ansi-blue-fg">(</span>income<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#34;Year&#34;</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span>income<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#34;Income&#34;</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">=</span> income<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#34;Income&#34;</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">.</span>str<span class="ansi-blue-fg">.</span>replace<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;,&#39;</span><span class="ansi-blue-fg">,</span><span class="ansi-blue-fg">&#39;&#39;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> income<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#34;Income&#34;</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">=</span> income<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#34;Income&#34;</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">.</span>str<span class="ansi-blue-fg">.</span>replace<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;$&#39;</span><span class="ansi-blue-fg">,</span><span class="ansi-blue-fg">&#39;&#39;</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>astype<span class="ansi-blue-fg">(</span>float<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-red-fg">#income[&#34;State Name&#34;] = income[&#34;State Name&#34;].apply(lambda x: x.strip())</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span> display<span class="ansi-blue-fg">(</span>income<span class="ansi-blue-fg">)</span>
 
-<span class="ansi-green-fg">/usr/local/lib/python3.7/dist-packages/pandas/core/generic.py</span> in <span class="ansi-cyan-fg">__getattr__</span><span class="ansi-blue-fg">(self, name)</span>
-<span class="ansi-green-intense-fg ansi-bold">   5485</span>         ):
-<span class="ansi-green-intense-fg ansi-bold">   5486</span>             <span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">[</span>name<span class="ansi-blue-fg">]</span>
-<span class="ansi-green-fg">-&gt; 5487</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">return</span> object<span class="ansi-blue-fg">.</span>__getattribute__<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> name<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">   5488</span> 
-<span class="ansi-green-intense-fg ansi-bold">   5489</span>     <span class="ansi-green-fg">def</span> __setattr__<span class="ansi-blue-fg">(</span>self<span class="ansi-blue-fg">,</span> name<span class="ansi-blue-fg">:</span> str<span class="ansi-blue-fg">,</span> value<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">-&gt;</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
+<div class="output_html rendered_html output_subarea ">
 
-<span class="ansi-green-fg">/usr/local/lib/python3.7/dist-packages/pandas/core/accessor.py</span> in <span class="ansi-cyan-fg">__get__</span><span class="ansi-blue-fg">(self, obj, cls)</span>
-<span class="ansi-green-intense-fg ansi-bold">    179</span>             <span class="ansi-red-fg"># we&#39;re accessing the attribute of the class, i.e., Dataset.geo</span>
-<span class="ansi-green-intense-fg ansi-bold">    180</span>             <span class="ansi-green-fg">return</span> self<span class="ansi-blue-fg">.</span>_accessor
-<span class="ansi-green-fg">--&gt; 181</span><span class="ansi-red-fg">         </span>accessor_obj <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>_accessor<span class="ansi-blue-fg">(</span>obj<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    182</span>         <span class="ansi-red-fg"># Replace the property with the accessor object. Inspired by:</span>
-<span class="ansi-green-intense-fg ansi-bold">    183</span>         <span class="ansi-red-fg"># https://www.pydanny.com/cached-property.html</span>
+  <div id="df-723ccb5a-2df2-4fea-8365-9285de2f2b66">
+    <div class="colab-df-container">
+      <div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ansi-green-fg">/usr/local/lib/python3.7/dist-packages/pandas/core/strings/accessor.py</span> in <span class="ansi-cyan-fg">__init__</span><span class="ansi-blue-fg">(self, data)</span>
-<span class="ansi-green-intense-fg ansi-bold">    166</span>         <span class="ansi-green-fg">from</span> pandas<span class="ansi-blue-fg">.</span>core<span class="ansi-blue-fg">.</span>arrays<span class="ansi-blue-fg">.</span>string_ <span class="ansi-green-fg">import</span> StringDtype
-<span class="ansi-green-intense-fg ansi-bold">    167</span> 
-<span class="ansi-green-fg">--&gt; 168</span><span class="ansi-red-fg">         </span>self<span class="ansi-blue-fg">.</span>_inferred_dtype <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>_validate<span class="ansi-blue-fg">(</span>data<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    169</span>         self<span class="ansi-blue-fg">.</span>_is_categorical <span class="ansi-blue-fg">=</span> is_categorical_dtype<span class="ansi-blue-fg">(</span>data<span class="ansi-blue-fg">.</span>dtype<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    170</span>         self<span class="ansi-blue-fg">.</span>_is_string <span class="ansi-blue-fg">=</span> isinstance<span class="ansi-blue-fg">(</span>data<span class="ansi-blue-fg">.</span>dtype<span class="ansi-blue-fg">,</span> StringDtype<span class="ansi-blue-fg">)</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-<span class="ansi-green-fg">/usr/local/lib/python3.7/dist-packages/pandas/core/strings/accessor.py</span> in <span class="ansi-cyan-fg">_validate</span><span class="ansi-blue-fg">(data)</span>
-<span class="ansi-green-intense-fg ansi-bold">    223</span> 
-<span class="ansi-green-intense-fg ansi-bold">    224</span>         <span class="ansi-green-fg">if</span> inferred_dtype <span class="ansi-green-fg">not</span> <span class="ansi-green-fg">in</span> allowed_types<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 225</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">raise</span> AttributeError<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;Can only use .str accessor with string values!&#34;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    226</span>         <span class="ansi-green-fg">return</span> inferred_dtype
-<span class="ansi-green-intense-fg ansi-bold">    227</span> 
-
-<span class="ansi-red-fg">AttributeError</span>: Can only use .str accessor with string values!</pre>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>State Name</th>
+      <th>Year</th>
+      <th>Income</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>United States</td>
+      <td>2015</td>
+      <td>$60200</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Alabama</td>
+      <td>2015</td>
+      <td>48300</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Alaska</td>
+      <td>2015</td>
+      <td>79200</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Arizona</td>
+      <td>2015</td>
+      <td>55600</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Arkansas</td>
+      <td>2015</td>
+      <td>45300</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>255</th>
+      <td>Virginia</td>
+      <td>2019</td>
+      <td>76500</td>
+    </tr>
+    <tr>
+      <th>256</th>
+      <td>Washington</td>
+      <td>2019</td>
+      <td>78700</td>
+    </tr>
+    <tr>
+      <th>257</th>
+      <td>West Virginia</td>
+      <td>2019</td>
+      <td>48900</td>
+    </tr>
+    <tr>
+      <th>258</th>
+      <td>Wisconsin</td>
+      <td>2019</td>
+      <td>64200</td>
+    </tr>
+    <tr>
+      <th>259</th>
+      <td>Wyoming</td>
+      <td>2019</td>
+      <td>65000</td>
+    </tr>
+  </tbody>
+</table>
+<p>260 rows × 3 columns</p>
 </div>
+      <button class="colab-df-convert" onclick="convertToInteractive('df-723ccb5a-2df2-4fea-8365-9285de2f2b66')"
+              title="Convert this dataframe to an interactive table."
+              style="display:none;">
+        
+  <svg xmlns="http://www.w3.org/2000/svg" height="24px"viewBox="0 0 24 24"
+       width="24px">
+    <path d="M0 0h24v24H0V0z" fill="none"/>
+    <path d="M18.56 5.44l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94zm-11 1L8.5 8.5l.94-2.06 2.06-.94-2.06-.94L8.5 2.5l-.94 2.06-2.06.94zm10 10l.94 2.06.94-2.06 2.06-.94-2.06-.94-.94-2.06-.94 2.06-2.06.94z"/><path d="M17.41 7.96l-1.37-1.37c-.4-.4-.92-.59-1.43-.59-.52 0-1.04.2-1.43.59L10.3 9.45l-7.72 7.72c-.78.78-.78 2.05 0 2.83L4 21.41c.39.39.9.59 1.41.59.51 0 1.02-.2 1.41-.59l7.78-7.78 2.81-2.81c.8-.78.8-2.07 0-2.86zM5.41 20L4 18.59l7.72-7.72 1.47 1.35L5.41 20z"/>
+  </svg>
+      </button>
+      
+  <style>
+    .colab-df-container {
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+    }
+
+    .colab-df-convert {
+      background-color: #E8F0FE;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      fill: #1967D2;
+      height: 32px;
+      padding: 0 0 0 0;
+      width: 32px;
+    }
+
+    .colab-df-convert:hover {
+      background-color: #E2EBFA;
+      box-shadow: 0px 1px 2px rgba(60, 64, 67, 0.3), 0px 1px 3px 1px rgba(60, 64, 67, 0.15);
+      fill: #174EA6;
+    }
+
+    [theme=dark] .colab-df-convert {
+      background-color: #3B4455;
+      fill: #D2E3FC;
+    }
+
+    [theme=dark] .colab-df-convert:hover {
+      background-color: #434B5C;
+      box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+      filter: drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.3));
+      fill: #FFFFFF;
+    }
+  </style>
+
+      <script>
+        const buttonEl =
+          document.querySelector('#df-723ccb5a-2df2-4fea-8365-9285de2f2b66 button.colab-df-convert');
+        buttonEl.style.display =
+          google.colab.kernel.accessAllowed ? 'block' : 'none';
+
+        async function convertToInteractive(key) {
+          const element = document.querySelector('#df-723ccb5a-2df2-4fea-8365-9285de2f2b66');
+          const dataTable =
+            await google.colab.kernel.invokeFunction('convertToInteractive',
+                                                     [key], {});
+          if (!dataTable) return;
+
+          const docLinkHtml = 'Like what you see? Visit the ' +
+            '<a target="_blank" href=https://colab.research.google.com/notebooks/data_table.ipynb>data table notebook</a>'
+            + ' to learn more about interactive tables.';
+          element.innerHTML = '';
+          dataTable['output_type'] = 'display_data';
+          await google.colab.output.renderOutput(dataTable, element);
+          const docLink = document.createElement('div');
+          docLink.innerHTML = docLinkHtml;
+          element.appendChild(docLink);
+        }
+      </script>
+    </div>
+  </div>
+  
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_text output_subarea ">
+<pre>State Name    object
+Year           int64
+Income        object
+dtype: object</pre>
+</div>
+
 </div>
 
 </div>
